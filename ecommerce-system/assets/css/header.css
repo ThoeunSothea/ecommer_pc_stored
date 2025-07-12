@@ -1,0 +1,430 @@
+/* assets/css/style.css */
+
+/* រចនាប័ទ្មមូលដ្ឋាន */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #f39c12;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --font-khmer: "Kantumruy", sans-serif;
+  --font-base-size: 1rem;
+  --spacing-unit: 1rem;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* រចនាប័ទ្មទូទៅ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-khmer);
+  font-size: var(--font-base-size);
+  line-height: 1.6;
+  color: var(--dark-color);
+  /* background-color: var(--dark-color); */
+  direction: ltr;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.fa-sr-only,
+.fa-sr-only-focusable:not(:focus),
+.sr-only,
+.sr-only-focusable:not(:focus) {
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.visually-hidden {
+  width: 10px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-header {
+  background-color: var(--dark-color);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  object-fit: cover;
+  color: var(--dark-color);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo img {
+  height: 70px;
+  width: auto;
+  color: var(--dark-color);
+  border-radius: 50%;
+  object-fit: cover;
+  /* margin-bottom: 1rem; */
+}
+ .logo_text {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+/* រចនាប័ទ្មស្វែងរក */
+.header-search {
+  flex: 1;
+  margin: 0 2rem;
+  max-width: 500px;
+}
+
+.header-search form {
+  display: flex;
+  position: relative;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: var(--font-khmer);
+  font-size: 0.9rem;
+}
+
+.header-search button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* រចនាប័ទ្មសកម្មភាពអ្នកប្រើ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.account-link,
+.auth-link,
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--light-color);
+  font-weight: 500;
+}
+
+.account-link:hover,
+.auth-link:hover,
+.cart-link:hover {
+  color: var(--secondary-color);
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-count {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* រចនាប័ទ្មអ្នកប្រើប្រាស់ */
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  z-index: 1;
+  padding: 0.5rem 0;
+}
+
+.dropdown-content a {
+  color: var(--dark-color);
+  padding: 0.5rem 1rem;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+.account-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* រចនាប័ទ្មម៉ឺនុយសំខាន់ */
+.main-nav {
+  position: relative;
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+#primary-menu {
+  display: flex;
+  list-style: none;
+}
+
+#primary-menu li {
+  position: relative;
+}
+
+#primary-menu li a {
+  display: block;
+  padding: 1rem;
+  color: var(--light-color);
+  font-weight: 500;
+}
+
+#primary-menu li a:hover,
+#primary-menu li a.active {
+  color: var(--secondary-color);
+}
+
+#primary-menu li a.active {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/*===================================footer=================================== */
+
+/* រចនាប័ទ្មសម្រាប់ផ្នែក footer */
+footer {
+  /* background-color: var(--dark-color); */
+  color: var(--light-color);
+  padding: 3rem 0 0;
+  margin-top: 3rem;
+  font-family: var(--font-khmer);
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.footer-column p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+  color: var(--light-color);
+  opacity: 0.8;
+  transition: var(--transition);
+  display: block;
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+  color: var(--accent-color);
+  padding-left: 5px;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--accent-color);
+  width: 20px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* រចនាប័ទ្មសម្រាប់របៀបងងឹត */
+@media (prefers-color-scheme: dark) {
+  footer {
+    background-color: #1a1a1a;
+  }
+
+  .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* រចនាប័ទ្មសម្រាប់ម៉ូដាយល់ */
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-column {
+    margin-bottom: 2rem;
+  }
+
+  .footer-column:last-child {
+    margin-bottom: 0;
+    
+  }
+
+  .main-nav{
+    
+  }
+}
+
